@@ -14,7 +14,7 @@ manutd = None
 def auth():
 	#Authenticating API keys
 	auth = tweepy.OAuthHandler(CONSUMER_KEY, CONSUMER_SECRET)
-	auth.set_access_token(ACCESS_TOKEN, ACCESS_SECRET)
+	auth.set_access_token(ACCESS_KEY, ACCESS_SECRET)
 	#Calling the api
 	global api
 	api = tweepy.API(auth)
