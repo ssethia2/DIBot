@@ -35,7 +35,7 @@ def print_tweets():
 	# score = re.compile(r'[0-9]+\s*\-\s*[0-9]+')
 
 	while True:
-		for tweet in api.user_timeline(manutd.screen_name):
+		for tweet in api.user_timeline(manutd.screen_name).reverse():
 			try:
 				# Retweet tweets as they are found
 				tweet.retweet()
