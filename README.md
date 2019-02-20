@@ -1,9 +1,9 @@
-RetweeterBot
 
+# RetweeterBot
+
+
+##### A simple Twitter bot that retweets the Manchester United official Twitter handle
 ___
-
-### A simple Twitter bot that retweets the Manchester United official Twitter handle
----------
 
 This is a simple twitter bot written in Python and deployed on Heroku. It retweets the newest tweets in order from the Manchester United twitter handle once a day.
 
