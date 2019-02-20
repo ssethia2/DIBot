@@ -32,18 +32,19 @@ def limit_handled(cursor):
 
 def print_tweets():
 	pids = []
-	score = re.compile(r'[0-9]+\s*\-\s*[0-9]+')
- 
-	for tweet in api.user_timeline(manutd.screen_name):
-		try:
-			# Retweet tweets as they are found
-			tweet.retweet()
-			print(tweet.text)
-			sleep(60 * 60 * 24)
+	# score = re.compile(r'[0-9]+\s*\-\s*[0-9]+')
 
-		except tweepy.TweepError as e:
-			print(e.reason)
-			
+	while True:
+		for tweet in api.user_timeline(manutd.screen_name):
+			try:
+				# Retweet tweets as they are found
+				tweet.retweet()
+				print(tweet.text)
+				sleep(60 * 60 * 24)
+
+			except tweepy.TweepError as e:
+				print(e.reason)
+
 def main():
 	auth()
 	print_tweets()
