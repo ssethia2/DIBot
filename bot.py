@@ -1,15 +1,20 @@
 import tweepy
-import credentials as creds
 import re
 from time import sleep
+from os import environ
+
+CONSUMER_KEY = environ['CONSUMER_KEY']
+CONSUMER_SECRET = environ['CONSUMER_SECRET']
+ACCESS_KEY = environ['ACCESS_KEY']
+ACCESS_SECRET = environ['ACCESS_SECRET']
 
 api = None
 manutd = None
 
 def auth():
 	#Authenticating API keys
-	auth = tweepy.OAuthHandler(creds.CONSUMER_KEY, creds.CONSUMER_SECRET)
-	auth.set_access_token(creds.ACCESS_TOKEN, creds.ACCESS_SECRET)
+	auth = tweepy.OAuthHandler(CONSUMER_KEY, CONSUMER_SECRET)
+	auth.set_access_token(ACCESS_TOKEN, ACCESS_SECRET)
 	#Calling the api
 	global api
 	api = tweepy.API(auth)
